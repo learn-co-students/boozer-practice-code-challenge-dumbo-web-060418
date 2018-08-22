@@ -3,32 +3,22 @@ import React, { Component } from 'react'
 class Form extends Component {
   render(){
     return (
-      <form>
+      <form onSubmit={this.props.submit}>
         <h3>Create a Cocktail</h3>
 
         <p>Name</p>
-        <input type="text"/>
+        <input value={this.props.nameState} onChange={this.props.name} type="text"/>
 
         <p>Description</p>
-        <input type="text"/>
+        <input  value={this.props.descriptionState} onChange={this.props.description} type="text"/>
 
         <p>Instructions</p>
-        <input type="text"/>
+        <input value={this.props.instructionsState} onChange={this.props.instructions} type="text"/>
 
-        <h3>Proportions</h3>
-        <div className="container">
-          <p>Ingredient Name<br/>
-          <input type="text"/>
-          </p>
 
-          <p>Quantity<br/>
-          <input type="text"/>
-          </p>
-        </div>
 
-        <p><button> + </button></p>
+        <input  type="submit"/>
 
-        <input type="submit"/>
       </form>
     )
   }
