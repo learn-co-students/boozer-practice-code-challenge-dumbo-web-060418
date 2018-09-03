@@ -1,8 +1,12 @@
 import React from 'react'
 
 const Cocktail = (props) => {
+const { name } = props.cocktail
+// const { handleClick } = props.cocktail
   return (
-    <li></li>
+    <li onClick={() => props.handleClick(props.cocktail)}>
+      {name}
+    </li>
   )
 }
 
